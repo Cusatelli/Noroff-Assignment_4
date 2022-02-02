@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+$background-color: rgb(34, 34, 34);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: auto;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: $background-color;
+}
