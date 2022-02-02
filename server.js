@@ -57,9 +57,9 @@ app.get('/*', (req, res) => {
     res.sendFile('index.html', { root: 'dist/' + packageJson.name });
 });
 
-app.get('/api/trainers/', (req, res) => {
-    res.sendFile('db.json', { root: './' });
-});
+// app.get('/api/trainers/', (req, res) => {
+//     res.sendFile('db.json', { root: './' });
+// });
 
 // Start server
 app.listen(process.env.PORT || 8080, () => {
