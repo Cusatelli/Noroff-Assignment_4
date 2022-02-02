@@ -1,0 +1,20 @@
+{
+    "trainers": [
+        {
+            "id": 1,
+            "username": "ash",
+            "pokemon": [
+                "bulbasaur",
+                "pikachu"
+            ]
+        },
+        {
+            "id": 2,
+            "username": "carlos",
+            "pokemon": [
+                "squirtle",
+                "mewtwo"
+            ]
+        }
+    ]
+}
