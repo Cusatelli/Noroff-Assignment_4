@@ -26,7 +26,6 @@
 //             return response.status('401').json({ error: 'Invalid API Key provided - are not allowed to access this resource' });
 //         }
 //     }
-
 //     next();
 // });
 
@@ -58,9 +57,25 @@ app.get('/*', (req, res) => {
     res.sendFile('index.html', { root: 'dist/' + packageJson.name });
 });
 
-// Start server
-app.listen(process.env.PORT || 8080, () => console.log('Server started...'));
+app.get('/api/trainers/', (req, res) => {
+    res.sendFile('db.json', { root: './' });
+});
 
+// Start server
+app.listen(process.env.PORT || 8080, () => {
+    console.log(
+        '\n__________________________________\n\n'
+        + ' JSON Server is running!\n\n'
+        + ' Heroku App:\n'
+        + `\u001b[35m https://noroff-assignment-4.herokuapp.com/ \u001b[0m\n\n`
+        + ' Localhost:\n'
+        + `\u001b[34m http://localhost:${PORT} \u001b[0m\n\n`
+        + ' Resources:\n'
+        + ` API:   \u001b[33m http://localhost:${PORT}/ \u001b[0m\n`
+        + ` Trainers: \u001b[33m http://localhost:${PORT}/trainers \u001b[0m`
+        + '\n__________________________________\n'
+    );
+});
 /**
  * @author: Klement Omeri
  * Special thanks to Klement for providing the function to redirect traffic from http to https
