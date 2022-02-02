@@ -1,7 +1,6 @@
 {
   "name": "app",
   "version": "0.0.0",
-  "main": "index.js",
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
