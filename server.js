@@ -46,7 +46,7 @@
 // });
 const express = require('express');
 const app = express();
-const packageJson = require('./package.json')
+const packageJson = require('./package.json');
 
 // Middleware
 app.use(requireHTTPS);
@@ -76,6 +76,7 @@ app.listen(process.env.PORT || 8080, () => {
         + '\n__________________________________\n'
     );
 });
+
 /**
  * @author: Klement Omeri
  * Special thanks to Klement for providing the function to redirect traffic from http to https
