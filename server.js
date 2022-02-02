@@ -84,3 +84,10 @@ function requireHTTPS(req, res, next) {
     }
     next();
 }
+
+
+// KEEP package.json:
+// ,
+// "start": "node server.js",
+// "start-server": "ng build && node server.js",
+// "deploy": "ng build && git add . && git commit -m"
