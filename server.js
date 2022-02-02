@@ -58,6 +58,10 @@ app.get('/*', (req, res) => {
     res.sendFile('index.html', { root: 'dist/' + packageJson.name });
 });
 
+app.get('/api/', (req, res) => {
+    res.sendFile('db.json', { root: '/' });
+});
+
 // Start server
 app.listen(PORT, () => {
     console.log(
