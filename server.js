@@ -47,6 +47,7 @@
 const express = require('express');
 const app = express();
 const packageJson = require('./package.json');
+const PORT = process.env.PORT || 8080;
 
 // Middleware
 app.use(requireHTTPS);
@@ -58,7 +59,7 @@ app.get('/*', (req, res) => {
 });
 
 // Start server
-app.listen(process.env.PORT || 8080, () => {
+app.listen(PORT, () => {
     console.log(
         '\n__________________________________\n\n'
         + ' JSON Server is running!\n\n'
@@ -84,10 +85,3 @@ function requireHTTPS(req, res, next) {
     }
     next();
 }
-
-
-// KEEP package.json:
-// ,
-// "start": "node server.js",
-// "start-server": "ng build && node server.js",
-// "deploy": "ng build && git add . && git commit -m"
