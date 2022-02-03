@@ -8,11 +8,15 @@
     $code-background-color: rgb(44, 44, 44);
     
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-start;
+    padding-inline: 2rem;
 
-    gap: 2rem;
     color: $color;
+
+    .whitespace {
+        padding-block-start: 2rem;
+    }
 
     .resources {
         text-align: left;
@@ -24,11 +28,10 @@
 
     img {
         position: absolute;
+        left: 50%;
         top: 50%;
-        transform: translateY(-50%);
-        height: 20rem;
-        aspect-ratio: 1;
-        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        width: 50%;
     }
 
     .header {
