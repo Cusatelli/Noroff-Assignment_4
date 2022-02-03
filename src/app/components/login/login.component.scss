@@ -1,0 +1,75 @@
+
+.login {
+    $h: 236; $s: 100%; $l: 86.7%; $l-hover: 76.7%;
+    $link-color: hsl($h $s $l);
+    $link-color-hover: hsl($h $s $l-hover);
+    $color: rgb(255, 255, 255);
+    $code-color: rgb(206, 180, 94);
+    $code-background-color: rgb(44, 44, 44);
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    gap: 2rem;
+    color: $color;
+
+    .resources {
+        text-align: left;
+    }
+
+    .next {
+        text-align: right;
+    }
+
+    img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 20rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+    }
+
+    .header {
+        font-size: 2rem;
+        font-weight: bolder;
+        text-transform: uppercase;
+        margin-block: 0.5rem;
+    }
+
+    .link-container {
+        padding-block: 0.5rem;
+
+        a {
+            color: $link-color;
+            text-decoration: none;
+            font-weight: bolder;
+            padding-block-end: 0.1rem;
+            padding-inline: 0.3rem;
+            line-height: 1.5rem;
+            margin-inline: 0.2rem;
+            border-bottom: 0.1rem $link-color solid;
+    
+            &:hover {
+                color: $link-color-hover;
+                border-bottom-color: $link-color-hover;
+            }
+        }
+    }
+
+    .code-container {
+        padding-block: 0.5rem;
+
+        code {
+            color: $code-color;
+            background-color: $code-background-color;
+            margin-inline: 0.5rem;
+            line-height: 2.5rem;
+            padding-inline: 1rem;
+            padding-block: 0.5rem;
+            border-radius: 0.1rem;
+            box-shadow: 1px 1px 2px rgba($color: #000000, $alpha: 0.25);
+        }
+    }
+}
