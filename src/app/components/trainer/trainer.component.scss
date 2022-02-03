@@ -1,0 +1,23 @@
+
+.trainer {
+    $h: 236; $s: 100%; $l: 86.7%; $l-hover: 76.7%;
+    $link-color: hsl($h $s $l);
+    $link-color-hover: hsl($h $s $l-hover);
+    $color: rgb(255, 255, 255);
+    $code-color: rgb(206, 180, 94);
+    $code-background-color: rgb(44, 44, 44);
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    gap: 2rem;
+    color: $color;
+
+    .header {
+        font-size: 2rem;
+        font-weight: bolder;
+        text-transform: uppercase;
+        margin-block: 0.5rem;
+    }
+}
