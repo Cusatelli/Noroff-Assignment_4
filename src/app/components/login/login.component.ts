@@ -1,6 +1,6 @@
-import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { TrainerService } from '../../services/trainer.service';
+import { STORAGE_KEY } from 'src/app/constants';
 
 @Component({
   selector: 'app-login',
@@ -8,29 +8,6 @@ import { TrainerService } from '../../services/trainer.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  // @Output() loggedIn: EventEmitter<void> = new EventEmitter();
-
-  // constructor(private trainerService: TrainerService) {}
-
-  // public loginTrainerForm: FormGroup = new FormGroup({
-  //   trainerName: new FormControl('', [
-  //     Validators.required,
-  //     Validators.minLength(2),
-  //     Validators.maxLength(42) // Important number
-  //   ])
-  // });
-
-  // // Getters & Setters
-  // public get trainerName(): AbstractControl {
-  //   const getTrainer = this.loginTrainerForm.get('trainerName')?.value;
-  //   return getTrainer;
-  // }
-
-  // // Event Handlers
-  // public onLoginClick(): void {
-  //   this.trainerService.loginTrainer(this.trainerName.value.trim());
-  //   this.loggedIn.emit();
-  // }
   loginForm: FormGroup = new FormGroup({
     trainerName: new FormControl(''),
   });
@@ -39,18 +16,16 @@ export class LoginComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    this.loginForm = this.formBuilder.group(
-      {
-        username: [
-          '',
-          [
-            Validators.required,
-            Validators.minLength(2),
-            Validators.maxLength(42)
-          ]
+    this.loginForm = this.formBuilder.group({
+      username: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(2),
+          Validators.maxLength(42)
         ]
-      }
-    );
+      ]
+    });
   }
 
   get getFormData(): { [key: string]: AbstractControl } {
@@ -64,7 +39,9 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    console.log(JSON.stringify(this.loginForm.value, null, 2));
+    const username = this.loginForm.value;
+    console.log(STORAGE_KEY, JSON.stringify(username, null, 2));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(username));
   }
 
   onReset(): void {
