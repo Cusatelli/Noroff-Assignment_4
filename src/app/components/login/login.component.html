@@ -1,3 +1,24 @@
-<div class="login">
-    <h2 class="header">Login Component</h2>
+<div class="login-form">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" formControlName="username" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && getFormData['username'].errors }" />
+            <div *ngIf="submitted && getFormData['username'].errors" class="invalid-feedback">
+                <div *ngIf="getFormData['username'].errors['required']">Username is required</div>
+                <div *ngIf="getFormData['username'].errors['minlength']">
+                    Username must be at least 2 characters
+                </div>
+                <div *ngIf="getFormData['username'].errors['maxlength']">
+                    Username must not exceed 42 characters
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">login</button>
+            <button type="button" (click)="onReset()" class="btn btn-warning float-right">
+                Reset
+            </button>
+        </div>
+    </form>
 </div>
