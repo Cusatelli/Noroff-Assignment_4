@@ -1,76 +1,36 @@
 
-.app {
-    $h: 236; $s: 100%; $l: 86.7%; $l-hover: 76.7%;
-    $link-color: hsl($h $s $l / 1);
-    $link-color-hover: hsl($h $s $l-hover / 1);
-    $color: rgb(255, 255, 255);
-    $code-color: rgb(206, 180, 94);
-    $code-background-color: rgb(44, 44, 44);
+nav {
+    width: max(50%, 20rem); // If 50% is less than 20rem then clamp at 20rem.
+    transition: background-color 1s;
+    transform: rotate(-2.5deg);
+    background-color: hsl(0, 0%, 10%);
+
+    &:hover {
+        background-color: hsl(0, 0%, 5%);
+    }
     
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
+    ul {
+        height: calc(3rem + 2px);
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
 
-    gap: 2rem;
-    margin: 2rem;
-    color: $color;
+        li {
+            list-style: none;
+            margin-block-start: 1rem;
 
-    .resources {
-        text-align: left;
-    }
+            a {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+                color: #FFF;
+                text-transform: uppercase;
+                text-decoration: none;
+                transition: background-color 0.5s;
 
-    .next {
-        text-align: right;
-    }
-
-    img {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        height: 20rem;
-        aspect-ratio: 1;
-        border-radius: 50%;
-    }
-
-    .header {
-        font-size: 2rem;
-        font-weight: bolder;
-        text-transform: uppercase;
-        margin-block: 0.5rem;
-    }
-
-    .link-container {
-        padding-block: 0.5rem;
-
-        a {
-            color: $link-color;
-            text-decoration: none;
-            font-weight: bolder;
-            padding-block-end: 0.1rem;
-            padding-inline: 0.3rem;
-            line-height: 1.5rem;
-            margin-inline: 0.2rem;
-            border-bottom: 0.1rem $link-color solid;
-    
-            &:hover {
-                color: $link-color-hover;
-                border-bottom-color: $link-color-hover;
+                &:hover {
+                    background-color: hsl(0, 0%, 20%);
+                }
             }
-        }
-    }
-
-    .code-container {
-        padding-block: 0.5rem;
-
-        code {
-            color: $code-color;
-            background-color: $code-background-color;
-            margin-inline: 0.5rem;
-            line-height: 2.5rem;
-            padding-inline: 1rem;
-            padding-block: 0.5rem;
-            border-radius: 0.1rem;
-            box-shadow: 1px 1px 2px rgba($color: #000000, $alpha: 0.25);
         }
     }
 }

@@ -1,55 +1,8 @@
-<style></style>
+<nav>
+  <ul>
+    <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+    <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+  </ul>
+</nav>
 
-<!-- App -->
-<div class="app">
-  <!-- Resources -->
-  <div class="resources">
-    <h2 class="header">Resources</h2>
-    <p>Here are some links to help you get started:</p>
-    <div class="link-container">
-      <a target="_blank" rel="noopener" href="https://angular.io/tutorial">Learn Angular</a>
-    </div>
-    <div class="link-container">
-      <a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a>
-    </div>
-    <div class="link-container">
-      <a target="_blank" rel="noopener" href="https://material.angular.io">Angular Material</a>
-    </div>
-    <div class="link-container">
-      <a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular Blog</a>
-    </div>
-    <div class="link-container">
-      <a target="_blank" rel="noopener" href="https://angular.io/devtools/">Angular DevTools</a>
-    </div>
-  </div>
-  <img alt="Angular Logo" src="https://avatars.githubusercontent.com/u/39692033?v=4" />
-  <!-- Next Steps -->
-  <div class="next">
-    <h2 class="header">Next Steps</h2>
-    <p>What do you want to do next with your app?</p>
-    <div class="code-container">
-      <p>New Component</p>
-      <code>ng generate component xyz</code>
-    </div>
-    <div class="code-container">
-      <p>Angular Material</p>
-      <code>ng add @angular/material</code>
-    </div>
-    <div class="code-container">
-      <p>Add PWA Support</p>
-      <code>ng add @angular/pwa</code>
-    </div>
-    <div class="code-container">
-      <p>Add Dependency</p>
-      <code>ng add _____</code>
-    </div>
-    <div class="code-container">
-      <p>Run and Watch Tests</p>
-      <code>ng test</code>
-    </div>
-    <div class="code-container">
-      <p>Build for Production</p>
-      <code>ng build</code>
-    </div>
-  </div>
-</div>
+<router-outlet></router-outlet>
