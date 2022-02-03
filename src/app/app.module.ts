@@ -4,14 +4,18 @@ import { AppRoutingModule } from './app-routing.module'; // CLI imports
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
-import { HomeComponent } from './components/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LandingComponent } from './components/landing/landing.component';
+import { CatalogueComponent } from './components/catalogue/catalogue.component';
+import { TrainerComponent } from './components/trainer/trainer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    LandingComponent,
+    CatalogueComponent,
+    TrainerComponent
   ],
   imports: [
     BrowserModule,
